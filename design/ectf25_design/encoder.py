@@ -13,7 +13,8 @@ Copyright: Copyright (c) 2025 The MITRE Corporation
 import argparse
 import struct
 import json
-
+from Crypto.PublicKey import ECC
+from Crypto.Cipher import AES
 
 class Encoder:
     def __init__(self, secrets: bytes):
@@ -34,6 +35,7 @@ class Encoder:
         self.some_secrets = secrets["some_secrets"]
 
     def encode(self, channel: int, frame: bytes, timestamp: int) -> bytes:
+        mykey = ECC.generate(curve='p192')
         """The frame encoder function
 
         This will be called for every frame that needs to be encoded before being

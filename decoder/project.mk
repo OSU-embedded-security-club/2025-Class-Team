@@ -13,6 +13,19 @@
 
 # Add your config here!
 
+# Add TinyCrypt paths to include directories (IPATH) and source directories (VPATH)
+IPATH+=./tinycrypt/lib/include
+VPATH+=./tinycrypt/lib/source
+
+# # Add TinyCrypt source files to the build process
+# TINYCRYPT_SRCS = \
+#     aes_encrypt.c \
+#     constants.c \
+#     utils.c
+
+# # Add the TinyCrypt sources to the build process
+# SRCS += $(addprefix /tinycrypt/lib/source/, $(TINYCRYPT_SRCS))
+
 # This example is only compatible with the FTHR board,
 # so we override the BOARD value to hard-set it.
 override BOARD=FTHR_RevA

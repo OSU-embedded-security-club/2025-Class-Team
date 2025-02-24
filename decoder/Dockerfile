@@ -33,6 +33,9 @@ RUN apt-get install -y unzip && \
 
 ENV MAXIM_PATH=/root/msdk-2024_02
 
+# Add TinyCrypt to the build context
+COPY ./tinycrypt /root/tinycrypt
+
 WORKDIR /decoder
 
 ENTRYPOINT ["bash", "-c", "make release DECODER_ID=${DECODER_ID} && cp build/max78000.elf build/max78000.bin /out"]
