@@ -21,6 +21,7 @@
 #include "mxc_delay.h"
 #include "simple_flash.h"
 #include "host_messaging.h"
+#include <uECC.h>
 
 #include "simple_uart.h"
 
